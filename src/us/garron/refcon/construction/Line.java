@@ -1,4 +1,4 @@
-package us.garron.refcon.types;
+package us.garron.refcon.construction;
 
 public class Line {
 
