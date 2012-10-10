@@ -22,6 +22,14 @@ public class Test {
 				));
 		
 		System.out.println("c: " + c.getValue());
+
+		final Expression g1 = new Minus(new PositiveInteger(1));
+		final Expression g2 = new Minus(new PositiveInteger(1));
+		final Expression g3 = new PositiveInteger(1);
+		
+		final Expression goldenRatioSmallNegative = new QuadraticEquationRoot1(g1, g2, g3);
+		
+		System.out.println("Golden ratio: " + goldenRatioSmallNegative.getValue());
 		
 	}
 
