@@ -47,6 +47,15 @@ public class Test {
 		);
 		
 		System.out.println("Value for box of maximum volume: " + boxOfMaximumVolume.getValue());
+
+		////////////////////////////////
+
+		final Expression v1 = new Times(new Sqrt(new PositiveInteger(33)), new Divide(new PositiveInteger(3), new PositiveInteger(55)));
+		final Expression v2 = new Times(new Sqrt(new PositiveInteger(33)), new Divide(new PositiveInteger(3), new PositiveInteger(55)));
+		final Expression v3 = new Times(new Sqrt(new PositiveInteger(33)), new Divide(new PositiveInteger(6), new PositiveInteger(110)));
+
+		System.out.println("Equal? " + v1.equals(v2));
+		System.out.println("Equal? " + v1.equals(v3));
 		
 	}
 

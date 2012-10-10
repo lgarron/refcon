@@ -13,5 +13,13 @@ public class Divide implements Expression {
 	public float getValue() {
 		return first.getValue() / second.getValue();
 	}
+
+	public boolean equals(Expression other) {
+		return (
+				other.getClass() == Divide.class &&
+				this.first.equals(((Divide) other).first) &&
+				this.second.equals(((Divide) other).second)
+		);
+	}
 	
 }

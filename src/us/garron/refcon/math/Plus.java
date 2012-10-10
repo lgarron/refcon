@@ -13,5 +13,13 @@ public class Plus implements Expression {
 	public float getValue() {
 		return first.getValue() + second.getValue();
 	}
+
+	public boolean equals(Expression other) {
+		return (
+				other.getClass() == Plus.class &&
+				this.first.equals(((Plus) other).first) &&
+				this.second.equals(((Plus) other).second)
+		);
+	}
 	
 }

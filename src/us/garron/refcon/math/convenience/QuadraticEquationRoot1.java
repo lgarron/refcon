@@ -40,4 +40,11 @@ public class QuadraticEquationRoot1 implements Expression {
 		return subExpression.getValue();
 	}
 
+	public boolean equals(Expression other) {
+		return (
+				other.getClass() == QuadraticEquationRoot1.class &&
+				this.subExpression.equals(((QuadraticEquationRoot1) other).subExpression)
+		);
+	}
+
 }

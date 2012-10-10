@@ -13,5 +13,12 @@ public class Subtract implements Expression {
 	public float getValue() {
 		return subExpression.getValue();
 	}
+
+	public boolean equals(Expression other) {
+		return (
+				other.getClass() == Subtract.class &&
+				this.subExpression.equals(((Subtract) other).subExpression)
+		);
+	}
 	
 }

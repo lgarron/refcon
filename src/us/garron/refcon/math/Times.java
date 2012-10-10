@@ -13,5 +13,13 @@ public class Times implements Expression {
 	public float getValue() {
 		return first.getValue() * second.getValue();
 	}
+
+	public boolean equals(Expression other) {
+		return (
+				other.getClass() == Times.class &&
+				this.first.equals(((Times) other).first) &&
+				this.second.equals(((Times) other).second)
+		);
+	}
 	
 }

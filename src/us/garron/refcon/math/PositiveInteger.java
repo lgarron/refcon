@@ -13,5 +13,12 @@ public class PositiveInteger implements Expression {
 	public float getValue() {
 		return value;
 	}
+
+	public boolean equals(Expression other) {
+		return (
+				other.getClass() == PositiveInteger.class &&
+				this.value == ((PositiveInteger) other).value
+		);
+	}
 	
 }

@@ -18,4 +18,11 @@ public class Sqrt implements Expression {
 		return (float) Math.sqrt(original.getValue());
 	}
 
+	public boolean equals(Expression other) {
+		return (
+				other.getClass() == Sqrt.class &&
+				this.original.equals(((Sqrt) other).original)
+		);
+	}
+
 }
