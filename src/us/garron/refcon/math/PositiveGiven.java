@@ -1,5 +1,7 @@
 package us.garron.refcon.math;
 
+import us.garron.refcon.construction.PointOnXAxis;
+
 public class PositiveGiven implements Expression {
 
 	private final float value;
@@ -20,6 +22,11 @@ public class PositiveGiven implements Expression {
 				other.getClass() == PositiveGiven.class &&
 				this.value == ((PositiveGiven) other).value
 		);
+	}
+
+	public PointOnXAxis construct() {
+		int placeholder = 0;
+		throw new UnsupportedOperationException("construct is not implemented yet");
 	}
 	
 }

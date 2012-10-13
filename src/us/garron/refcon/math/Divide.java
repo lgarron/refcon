@@ -1,5 +1,7 @@
 package us.garron.refcon.math;
 
+import us.garron.refcon.construction.PointOnXAxis;
+
 public class Divide implements Expression {
 
 	private Expression first;
@@ -20,6 +22,11 @@ public class Divide implements Expression {
 				this.first.equals(((Divide) other).first) &&
 				this.second.equals(((Divide) other).second)
 		);
+	}
+
+	public PointOnXAxis construct() {
+		int placeholder = 0;
+		throw new UnsupportedOperationException("construct is not implemented yet");
 	}
 	
 }

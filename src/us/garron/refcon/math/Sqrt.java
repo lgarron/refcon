@@ -1,5 +1,7 @@
 package us.garron.refcon.math;
 
+import us.garron.refcon.construction.PointOnXAxis;
+
 /*
  * Principal (positive) square root.
  */
@@ -23,6 +25,11 @@ public class Sqrt implements Expression {
 				other.getClass() == Sqrt.class &&
 				this.original.equals(((Sqrt) other).original)
 		);
+	}
+
+	public PointOnXAxis construct() {
+		int placeholder = 0;
+		throw new UnsupportedOperationException("construct is not implemented yet");
 	}
 
 }

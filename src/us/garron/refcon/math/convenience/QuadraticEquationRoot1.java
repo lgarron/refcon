@@ -1,5 +1,6 @@
 package us.garron.refcon.math.convenience;
 
+import us.garron.refcon.construction.PointOnXAxis;
 import us.garron.refcon.math.*;
 
 public class QuadraticEquationRoot1 implements Expression {
@@ -19,7 +20,7 @@ public class QuadraticEquationRoot1 implements Expression {
 		// b^2 - 4ac
 		final Expression discriminant = new Subtract(
 				new Times(xCoefficient, xCoefficient),
-				new Times(new Times(new PositiveInteger(4), x2Coefficient), constant)
+				new Times(new Times(new RCInteger(4), x2Coefficient), constant)
 		);
 		
 		if (discriminant.getValue() < 0) {
@@ -32,7 +33,7 @@ public class QuadraticEquationRoot1 implements Expression {
 						new Minus(xCoefficient),
 						new Minus(new Sqrt(discriminant))
 				),
-				new Times(new PositiveInteger(2), x2Coefficient)
+				new Times(new RCInteger(2), x2Coefficient)
 		);
 	}
 	
@@ -45,6 +46,11 @@ public class QuadraticEquationRoot1 implements Expression {
 				other.getClass() == QuadraticEquationRoot1.class &&
 				this.subExpression.equals(((QuadraticEquationRoot1) other).subExpression)
 		);
+	}
+
+	public PointOnXAxis construct() {
+		int placeholder = 0;
+		throw new UnsupportedOperationException("construct is not implemented yet");
 	}
 
 }

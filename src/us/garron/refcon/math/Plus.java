@@ -1,5 +1,7 @@
 package us.garron.refcon.math;
 
+import us.garron.refcon.construction.*;
+
 public class Plus implements Expression {
 
 	private Expression first;
@@ -20,6 +22,14 @@ public class Plus implements Expression {
 				this.first.equals(((Plus) other).first) &&
 				this.second.equals(((Plus) other).second)
 		);
+	}
+
+	public PointOnXAxis construct() {
+		PointOnXAxis ptFirst = first.construct();
+		PointOnXAxis ptSecond = second.construct();
+		PointOnXAxis ptMean = Constructions.mean(ptFirst, ptSecond);
+		PointOnXAxis ptSum = Constructions.twice(ptMean);
+		return ptSum;
 	}
 	
 }

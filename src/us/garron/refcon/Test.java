@@ -7,8 +7,8 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		final Expression x = new Sqrt(new PositiveInteger(2));
-		final Expression y = new Subtract(new PositiveInteger(4), new PositiveInteger(2));
+		final Expression x = new Sqrt(new RCInteger(2));
+		final Expression y = new Subtract(new RCInteger(4), new RCInteger(2));
 
 		System.out.println("x: " + x.getValue());
 		System.out.println("y: " + y.getValue());
@@ -27,9 +27,9 @@ public class Test {
 
 		////////////////////////////////
 		
-		final Expression g1 = new Minus(new PositiveInteger(1));
-		final Expression g2 = new Minus(new PositiveInteger(1));
-		final Expression g3 = new PositiveInteger(1);
+		final Expression g1 = new Minus(new RCInteger(1));
+		final Expression g2 = new Minus(new RCInteger(1));
+		final Expression g3 = new RCInteger(1);
 		
 		final Expression goldenRatioSmallNegative = new QuadraticEquationRoot1(g1, g2, g3);
 		
@@ -42,17 +42,17 @@ public class Test {
 		
 		final Expression boxOfMaximumVolume = new QuadraticEquationRoot1(
 				new Times (w, h),
-				new Minus(new Times(new PositiveInteger(4), new Plus(w, h))),
-				new PositiveInteger(12)
+				new Minus(new Times(new RCInteger(4), new Plus(w, h))),
+				new RCInteger(12)
 		);
 		
 		System.out.println("Value for box of maximum volume: " + boxOfMaximumVolume.getValue());
 
 		////////////////////////////////
 
-		final Expression v1 = new Times(new Sqrt(new PositiveInteger(33)), new Divide(new PositiveInteger(3), new PositiveInteger(55)));
-		final Expression v2 = new Times(new Sqrt(new PositiveInteger(33)), new Divide(new PositiveInteger(3), new PositiveInteger(55)));
-		final Expression v3 = new Times(new Sqrt(new PositiveInteger(33)), new Divide(new PositiveInteger(6), new PositiveInteger(110)));
+		final Expression v1 = new Times(new Sqrt(new RCInteger(33)), new Divide(new RCInteger(3), new RCInteger(55)));
+		final Expression v2 = new Times(new Sqrt(new RCInteger(33)), new Divide(new RCInteger(3), new RCInteger(55)));
+		final Expression v3 = new Times(new Sqrt(new RCInteger(33)), new Divide(new RCInteger(6), new RCInteger(110)));
 
 		System.out.println("Equal? " + v1.equals(v2));
 		System.out.println("Equal? " + v1.equals(v3));

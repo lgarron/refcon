@@ -1,5 +1,6 @@
 package us.garron.refcon.math.convenience;
 
+import us.garron.refcon.construction.PointOnXAxis;
 import us.garron.refcon.math.*;
 
 public class Subtract implements Expression {
@@ -19,6 +20,11 @@ public class Subtract implements Expression {
 				other.getClass() == Subtract.class &&
 				this.subExpression.equals(((Subtract) other).subExpression)
 		);
+	}
+
+	public PointOnXAxis construct() {
+		int placeholder = 0;
+		throw new UnsupportedOperationException("construct is not implemented yet");
 	}
 	
 }
