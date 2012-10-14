@@ -4,12 +4,14 @@ import us.garron.refcon.construction.PointOnXAxis;
 
 public class PositiveGiven extends Expression {
 
+	private final String name;
 	private final float value;
 
 	public PositiveGiven(final String name, final float value) {
 		if (value <= 0) {
 			throw new RuntimeException("PositiveGiven with name \"" + name + "\" initialized with non-positive float " + value + ".");
 		}
+		this.name = name;
 		this.value = value;
 	}
 	
@@ -25,12 +27,12 @@ public class PositiveGiven extends Expression {
 	}
 	
 	public String toString() {
-		return Float.toString(value); 
+		return "(" + name + ": " + Float.toString(value) + ")"; 
 	}
 
 	public PointOnXAxis constructUndeduplicated() {
-		int placeholder = 0;
-		throw new UnsupportedOperationException("construct is not implemented yet");
+		//TODO Elegant solution
+		return new PointOnXAxis(this);
 	}
 	
 }

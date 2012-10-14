@@ -59,7 +59,7 @@ public class Test {
 
 		new Times(new Minus(new RCInteger(33)), new Divide(new RCInteger(3), new RCInteger(55))).construct();
 		new Times(new Minus(new RCInteger(33)), new Divide(new RCInteger(3), new RCInteger(25))).construct();
-		new Times(new Minus(new RCInteger(33)), new Divide(new RCInteger(3), new RCInteger(55))).construct();
+		new Times(new Minus(new RCInteger(33)), new Divide(new RCInteger(3), new PositiveGiven("alpha", 55))).construct();
 		v1.construct();
 		v2.construct();
 		v3.construct();
