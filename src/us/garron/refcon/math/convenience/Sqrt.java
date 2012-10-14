@@ -1,6 +1,7 @@
-package us.garron.refcon.math;
+package us.garron.refcon.math.convenience;
 
-import us.garron.refcon.construction.PointOnXAxis;
+import us.garron.refcon.construction.*;
+import us.garron.refcon.math.*;
 
 /*
  * Principal (positive) square root.
@@ -32,8 +33,9 @@ public class Sqrt extends Expression {
 	}
 
 	public PointOnXAxis constructUndeduplicated() {
-		int placeholder = 0;
-		return original.construct();
+		GeometricMean geometricMean = new GeometricMean(new RCInteger(1), original);
+		PointOnXAxis ptSqrt = geometricMean.construct();
+		return ptSqrt;
 	}
 
 }
