@@ -12,6 +12,12 @@ public class Construction {
     return PointOnXAxis.fromIntercept(Line.x1Line);
   }
   
+  public static PointOnXAxis plus(PointOnXAxis p1, PointOnXAxis p2) {
+  	PointOnXAxis ptMean = Construction.meanOfPointsOnXAxis(p1, p2);
+		PointOnXAxis ptSum = Construction.doublePointOnXAxis(ptMean);
+		return ptSum;
+  }
+  
   // Constructs a point on the Y axis mirrored across the line y=x.
   public static PointOnYAxis PointOnYAxisfromPointOnXAxis(PointOnXAxis pointOnXAxis) {
     Line diag = Axiom3LineToLine.fold(Line.xAxis, Line.yAxis);
