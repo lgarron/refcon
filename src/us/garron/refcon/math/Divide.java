@@ -1,6 +1,10 @@
 package us.garron.refcon.math;
 
+import us.garron.refcon.axiom.Axiom1ThroughTwoPoints;
+import us.garron.refcon.construction.Construction;
+import us.garron.refcon.construction.Line;
 import us.garron.refcon.construction.PointOnXAxis;
+import us.garron.refcon.construction.PointOnYAxis;
 
 public class Divide implements Expression {
 
@@ -25,8 +29,20 @@ public class Divide implements Expression {
 	}
 
 	public PointOnXAxis construct() {
-		int placeholder = 0;
-		throw new UnsupportedOperationException("construct is not implemented yet");
+
+		PointOnXAxis ptFirst = first.construct();
+		PointOnXAxis ptSecond = second.construct();
+		
+		PointOnYAxis pt_1_0_mirrored = Construction.PointOnYAxisfromPointOnXAxis(Construction.point_1_0());
+		// second is to 1...
+		Line scalingLine1 = Axiom1ThroughTwoPoints.fold(ptSecond, pt_1_0_mirrored);
+		// as first is to...
+		Line scalingLine2 = Construction.parallelLineToLineThroughPoint(scalingLine1, ptFirst);
+		// the quotient! (second/1 = first/?)
+		PointOnYAxis ptQuotientOnYAxis = PointOnYAxis.fromIntercept(scalingLine2);
+		
+		PointOnXAxis ptQuotient = Construction.PointOnXAxisfromPointOnYAxis(ptQuotientOnYAxis);
+		return ptQuotient;
 	}
 	
 }

@@ -1,6 +1,7 @@
 package us.garron.refcon.math;
 
-import us.garron.refcon.construction.PointOnXAxis;
+import us.garron.refcon.axiom.Axiom1ThroughTwoPoints;
+import us.garron.refcon.construction.*;
 
 public class Times implements Expression {
 
@@ -25,8 +26,20 @@ public class Times implements Expression {
 	}
 
 	public PointOnXAxis construct() {
-		int placeholder = 0;
-		throw new UnsupportedOperationException("construct is not implemented yet");
+
+		PointOnXAxis ptFirst = first.construct();
+		PointOnXAxis ptSecond = second.construct();
+		
+		PointOnYAxis ptFirstMirrored = Construction.PointOnYAxisfromPointOnXAxis(ptFirst);
+		// 1 is to first...
+		Line scalingLine1 = Axiom1ThroughTwoPoints.fold(Construction.point_1_0(), ptFirstMirrored);
+		// as second is to...
+		Line scalingLine2 = Construction.parallelLineToLineThroughPoint(scalingLine1, ptSecond);
+		// the product! (1/first = second/?)
+		PointOnYAxis ptProductOnYAxis = PointOnYAxis.fromIntercept(scalingLine2);
+		
+		PointOnXAxis ptProduct = Construction.PointOnXAxisfromPointOnYAxis(ptProductOnYAxis);
+		return ptProduct;
 	}
 	
 }

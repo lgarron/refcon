@@ -14,12 +14,18 @@ public class Construction {
   
   // Constructs a point on the Y axis mirrored across the line y=x.
   public static PointOnYAxis PointOnYAxisfromPointOnXAxis(PointOnXAxis pointOnXAxis) {
-    
     Line diag = Axiom3LineToLine.fold(Line.xAxis, Line.yAxis);
     Line lineOriginal = Axiom4LineOntoSelfThroughPoint.fold(diag, pointOnXAxis);
     PointOnYAxis ptYIntercept = PointOnYAxis.fromIntercept(lineOriginal);
-
     return ptYIntercept;
+  }
+  
+  // Constructs a point on the X axis mirrored across the line y=x.
+  public static PointOnXAxis PointOnXAxisfromPointOnYAxis(PointOnYAxis pointOnYAxis) {
+    Line diag = Axiom3LineToLine.fold(Line.xAxis, Line.yAxis);
+    Line lineOriginal = Axiom4LineOntoSelfThroughPoint.fold(diag, pointOnYAxis);
+    PointOnXAxis ptXIntercept = PointOnXAxis.fromIntercept(lineOriginal);
+    return ptXIntercept;
   }
 
   public static PointOnXAxis meanOfPointsOnXAxis(PointOnXAxis m, PointOnXAxis n) {
@@ -36,6 +42,12 @@ public class Construction {
     Line lineDouble = Axiom4LineOntoSelfThroughPoint.fold(diag, ptM);
     PointOnXAxis ptDouble = PointOnXAxis.fromIntercept(lineDouble);
     return ptDouble;
+  }
+  
+  public static Line parallelLineToLineThroughPoint(Line l1, Point p1) {
+  	Line orthogonalLine = Axiom4LineOntoSelfThroughPoint.fold(l1, p1);
+  	Line parallelLine = Axiom4LineOntoSelfThroughPoint.fold(orthogonalLine, p1);
+  	return parallelLine;
   }
   
 }
