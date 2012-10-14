@@ -24,12 +24,10 @@ public class Minus implements Expression {
 
   public PointOnXAxis construct() {
     
-    Line diag = Axiom3LineToLine.fold(Locus.xAxis, Locus.yAxis);
     PointOnXAxis ptOriginal = original.construct();
-    Line lineOriginal = Axiom4LineOntoSelfThroughPoint.fold(diag, ptOriginal);
-    Point ptYIntercept = Point.fromIntersection(Locus.yAxis, lineOriginal);
+    Point ptYIntercept = Construction.PointOnYAxisfromPointOnXAxis(ptOriginal);
 
-    Line antiDiag = Axiom3LineToLine.fold(Locus.yAxis, Locus.xAxis);
+    Line antiDiag = Axiom3LineToLine.fold(Line.yAxis, Line.xAxis);
     Line lineNegative = Axiom4LineOntoSelfThroughPoint.fold(antiDiag, ptYIntercept);
     
     PointOnXAxis ptNegative = PointOnXAxis.fromIntercept(lineNegative);

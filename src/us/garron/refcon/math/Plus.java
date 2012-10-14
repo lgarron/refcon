@@ -27,8 +27,8 @@ public class Plus implements Expression {
 	public PointOnXAxis construct() {
 		PointOnXAxis ptFirst = first.construct();
 		PointOnXAxis ptSecond = second.construct();
-		PointOnXAxis ptMean = Constructions.mean(ptFirst, ptSecond);
-		PointOnXAxis ptSum = Constructions.twice(ptMean);
+		PointOnXAxis ptMean = Construction.meanOfPointsOnXAxis(ptFirst, ptSecond);
+		PointOnXAxis ptSum = Construction.doublePointOnXAxis(ptMean);
 		return ptSum;
 	}
 	
