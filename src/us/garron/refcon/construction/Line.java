@@ -3,12 +3,14 @@ package us.garron.refcon.construction;
 import us.garron.refcon.axiom.*;
 import us.garron.refcon.math.*;
 
-public class Line {
+public class Line extends Locus {
 
 	// TODO: Find a good parametrization that is not degenerate for horizontal lines, vertical lines, or lines through the origin. 
 	
 	private final Point p1;
 	private final Point p2;
+	
+	private final String name;
 	
 	private final Axiom axiom;
 	
@@ -22,12 +24,14 @@ public class Line {
 		this.p1 = p1;
 		this.p2 = p2;
 		this.axiom = null;
+		this.name = "Line " + super.nextName();
 	}
 	
 	public Line(final Point p1, final Point p2, Axiom axiom) {
 		this.p1 = p1;
 		this.p2 = p2;
 		this.axiom = axiom;
+		this.name = "Line " + super.nextName();
 	}
 	
 	public Point p1() {
@@ -36,6 +40,10 @@ public class Line {
 
 	public Point p2() {
 		return p2;
+	}
+	
+	public String name() {
+		return name;
 	}
 	
 	public Axiom axiom() {

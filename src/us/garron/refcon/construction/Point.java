@@ -3,10 +3,12 @@ package us.garron.refcon.construction;
 import us.garron.refcon.axiom.*;
 import us.garron.refcon.math.*;
 
-public class Point {
+public class Point extends Locus {
 
 	private final Expression x;
 	private final Expression y;
+	
+	private final String name;
 	
 	private final Axiom axiom;
 
@@ -14,12 +16,14 @@ public class Point {
 		this.x = x;
 		this.y = y;
 		this.axiom = null;
+		this.name = "Point " + super.nextName();
 	}
 
 	public Point(final Expression x, final Expression y, Axiom axiom) {
 		this.x = x;
 		this.y = y;
 		this.axiom = axiom;
+		this.name = "Point " + super.nextName();
 	}
 	
 	public Expression x() {
@@ -28,6 +32,10 @@ public class Point {
 
 	public Expression y() {
 		return y;
+	}
+	
+	public String name() {
+		return name;
 	}
 	
 	public Axiom axiom() {

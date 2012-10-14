@@ -63,6 +63,7 @@ public class Test {
 		v1.construct();
 		v2.construct();
 		v3.construct();
+		System.out.println(v3.construct().name());
 		
 	}
 
