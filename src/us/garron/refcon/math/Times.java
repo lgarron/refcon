@@ -3,7 +3,7 @@ package us.garron.refcon.math;
 import us.garron.refcon.axiom.Axiom1ThroughTwoPoints;
 import us.garron.refcon.construction.*;
 
-public class Times implements Expression {
+public class Times extends Expression {
 
 	private Expression first;
 	private Expression second;
@@ -24,8 +24,12 @@ public class Times implements Expression {
 				this.second.equals(((Times) other).second)
 		);
 	}
+	
+	public String toString() {
+		return "(" + first.toString() + "*" + second.toString() + ")"; 
+	}
 
-	public PointOnXAxis construct() {
+	public PointOnXAxis constructUndeduplicated() {
 
 		PointOnXAxis ptFirst = first.construct();
 		PointOnXAxis ptSecond = second.construct();

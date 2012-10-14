@@ -3,7 +3,7 @@ package us.garron.refcon.math.convenience;
 import us.garron.refcon.construction.PointOnXAxis;
 import us.garron.refcon.math.*;
 
-public class Subtract implements Expression {
+public class Subtract extends Expression {
 	
 	private Expression subExpression;
 	
@@ -21,8 +21,12 @@ public class Subtract implements Expression {
 				this.subExpression.equals(((Subtract) other).subExpression)
 		);
 	}
+	
+	public String toString() {
+		return subExpression.toString(); 
+	}
 
-	public PointOnXAxis construct() {
+	public PointOnXAxis constructUndeduplicated() {
 		return subExpression.construct();
 	}
 	

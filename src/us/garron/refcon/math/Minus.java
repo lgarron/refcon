@@ -3,7 +3,7 @@ package us.garron.refcon.math;
 import us.garron.refcon.axiom.*;
 import us.garron.refcon.construction.*;
 
-public class Minus implements Expression {
+public class Minus extends Expression {
 
   private Expression original;
   
@@ -21,8 +21,12 @@ public class Minus implements Expression {
         this.original.equals(((Minus) other).original)
     );
   }
+	
+	public String toString() {
+		return "(-" + original.toString() + ")"; 
+	}
 
-  public PointOnXAxis construct() {
+  public PointOnXAxis constructUndeduplicated() {
     
     PointOnXAxis ptOriginal = original.construct();
     Point ptYIntercept = Construction.PointOnYAxisfromPointOnXAxis(ptOriginal);

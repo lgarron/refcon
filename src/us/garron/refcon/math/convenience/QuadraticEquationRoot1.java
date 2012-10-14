@@ -3,19 +3,19 @@ package us.garron.refcon.math.convenience;
 import us.garron.refcon.construction.PointOnXAxis;
 import us.garron.refcon.math.*;
 
-public class QuadraticEquationRoot1 implements Expression {
+public class QuadraticEquationRoot1 extends Expression {
 
-	//	private final Expression constant;
-	//	private final Expression xCoefficient;
-	//	private final Expression x2Coefficient;
+	private final Expression constant;
+	private final Expression xCoefficient;
+	private final Expression x2Coefficient;
 
 	private final Expression subExpression;
 
 	public QuadraticEquationRoot1(final Expression constant, final Expression xCoefficient, final Expression x2Coefficient) {
 		
-		//	this.constant = constant;
-		//	this.xCoefficient = xCoefficient;
-		//	this.x2Coefficient = x2Coefficient;
+		this.constant = constant;
+		this.xCoefficient = xCoefficient;
+		this.x2Coefficient = x2Coefficient;
 
 		// b^2 - 4ac
 		final Expression discriminant = new Subtract(
@@ -47,8 +47,12 @@ public class QuadraticEquationRoot1 implements Expression {
 				this.subExpression.equals(((QuadraticEquationRoot1) other).subExpression)
 		);
 	}
+	
+	public String toString() {
+		return "root1((" + x2Coefficient.toString() + ")x^2 + (" + xCoefficient.toString() + ")x + (" + constant + "))"; 
+	}
 
-	public PointOnXAxis construct() {
+	public PointOnXAxis constructUndeduplicated() {
 		int placeholder = 0;
 		throw new UnsupportedOperationException("construct is not implemented yet");
 	}

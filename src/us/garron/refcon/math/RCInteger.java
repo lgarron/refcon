@@ -3,7 +3,7 @@ package us.garron.refcon.math;
 import us.garron.refcon.construction.Construction;
 import us.garron.refcon.construction.PointOnXAxis;
 
-public class RCInteger implements Expression {
+public class RCInteger extends Expression {
 	private final int value;
 
 	public RCInteger(final int value) {
@@ -15,14 +15,19 @@ public class RCInteger implements Expression {
 	}
 
 	public boolean equals(Expression other) {
+		//System.out.println("compare" + this.getValue() + " - " + other.getValue());
 		return (
 				other.getClass() == RCInteger.class &&
 				this.value == ((RCInteger) other).value
 		);
 	}
+	
+	public String toString() {
+		return Integer.toString(value); 
+	}
 
-	public PointOnXAxis construct() {
-		System.out.println("Constructing " + value);
+	public PointOnXAxis constructUndeduplicated() {
+		//System.out.println("Constructing " + value);
 		
 		if (value == 0) {
 			return Construction.origin();

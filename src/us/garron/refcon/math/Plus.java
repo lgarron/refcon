@@ -2,7 +2,7 @@ package us.garron.refcon.math;
 
 import us.garron.refcon.construction.*;
 
-public class Plus implements Expression {
+public class Plus extends Expression {
 
 	private Expression first;
 	private Expression second;
@@ -23,8 +23,12 @@ public class Plus implements Expression {
 				this.second.equals(((Plus) other).second)
 		);
 	}
+	
+	public String toString() {
+		return "(" + first.toString() + "+" + second.toString() + ")"; 
+	}
 
-	public PointOnXAxis construct() {
+	public PointOnXAxis constructUndeduplicated() {
 		PointOnXAxis ptFirst = first.construct();
 		PointOnXAxis ptSecond = second.construct();
 		PointOnXAxis ptSum = Construction.plus(ptFirst, ptSecond);

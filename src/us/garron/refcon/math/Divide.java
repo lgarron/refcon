@@ -6,7 +6,7 @@ import us.garron.refcon.construction.Line;
 import us.garron.refcon.construction.PointOnXAxis;
 import us.garron.refcon.construction.PointOnYAxis;
 
-public class Divide implements Expression {
+public class Divide extends Expression {
 
 	private Expression first;
 	private Expression second;
@@ -27,8 +27,12 @@ public class Divide implements Expression {
 				this.second.equals(((Divide) other).second)
 		);
 	}
+	
+	public String toString() {
+		return "(" + first.toString() + "/" + second.toString() + ")"; 
+	}
 
-	public PointOnXAxis construct() {
+	public PointOnXAxis constructUndeduplicated() {
 
 		PointOnXAxis ptFirst = first.construct();
 		PointOnXAxis ptSecond = second.construct();
