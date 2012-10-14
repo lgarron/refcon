@@ -53,8 +53,7 @@ public class QuadraticEquationRoot1 extends Expression {
 	}
 
 	public PointOnXAxis constructUndeduplicated() {
-		int placeholder = 0;
-		throw new UnsupportedOperationException("construct is not implemented yet");
+		return subExpression.construct();
 	}
 
 }
