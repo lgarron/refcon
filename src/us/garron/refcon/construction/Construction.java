@@ -44,7 +44,7 @@ public class Construction {
   public static PointOnXAxis doublePointOnXAxis(PointOnXAxis m) {
     Line diag = Axiom3LineToLine.fold(Line.xAxis, Line.yAxis);
     Line lineM = Axiom4LineOntoSelfThroughPoint.fold(Line.xAxis, m);
-    Point ptM = Point.fromIntersection(diag, lineM);
+    Point ptM = PsuedoAxiom1PointFromTwoLines.define(diag, lineM);
     Line lineDouble = Axiom4LineOntoSelfThroughPoint.fold(diag, ptM);
     PointOnXAxis ptDouble = PointOnXAxis.fromIntercept(lineDouble);
     return ptDouble;

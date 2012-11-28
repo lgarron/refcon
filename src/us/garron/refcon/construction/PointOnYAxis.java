@@ -1,5 +1,6 @@
 package us.garron.refcon.construction;
 
+import us.garron.refcon.axiom.PsuedoAxiom1PointFromTwoLines;
 import us.garron.refcon.math.*;
 
 public class PointOnYAxis extends Point {
@@ -9,8 +10,8 @@ public class PointOnYAxis extends Point {
 	}
 	
 	public static PointOnYAxis fromIntercept(Line lineIntercept) {
-		//TODO: implement without cast (so that x is guaranteed to be 0 without the general implementation of pointFromIntersection) 
-		return (PointOnYAxis) Point.fromIntersection(Line.xAxis, lineIntercept);
+		Point p = PsuedoAxiom1PointFromTwoLines.define(Line.yAxis, lineIntercept);
+		return new PointOnYAxis(p.y());
 	}
 
 }

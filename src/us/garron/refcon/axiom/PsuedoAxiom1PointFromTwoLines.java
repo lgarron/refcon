@@ -11,7 +11,7 @@ public class PsuedoAxiom1PointFromTwoLines implements Axiom {
 	private PsuedoAxiom1PointFromTwoLines(Line l1, Line l2) {
 		this.l1 = l1;
 		this.l2 = l2;
-		this.intersectionPoint = Locus.dummyPoint;
+		this.intersectionPoint = Point.fromIntersection(l1, l2, this);
 	}
 	
 	public static Point define(Line l1, Line l2) {

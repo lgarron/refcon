@@ -42,9 +42,10 @@ public class Point extends Locus {
 		return axiom;
 	}
 	
-	public static Point fromIntersection(Line l1, Line l2) {
-		// TODO: implement stub
-		return null;
+	public static Point fromIntersection(Line l1, Line l2, Axiom axiom) {
+		int placeholder = 0;
+		Expression dummyExpression = new RCInteger(0);
+		return new Point(dummyExpression, dummyExpression, axiom);
 	}
 	
 }
