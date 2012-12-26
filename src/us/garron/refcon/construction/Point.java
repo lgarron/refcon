@@ -12,13 +12,6 @@ public class Point extends Locus {
 	
 	private final Axiom axiom;
 
-	public Point(final Expression x, final Expression y) {
-		this.x = x;
-		this.y = y;
-		this.axiom = null;
-		this.name = "Point " + super.nextName();
-	}
-
 	public Point(final Expression x, final Expression y, Axiom axiom) {
 		this.x = x;
 		this.y = y;

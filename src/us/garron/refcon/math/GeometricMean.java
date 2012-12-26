@@ -36,7 +36,7 @@ public class GeometricMean extends Expression {
 		PointOnXAxis ptCenter = Construction.meanOfPointsOnXAxis(ptMinusFirst, ptSecond);
 		Line orthogonalRootLine = Axiom5PointToLineThroughPoint.fold(ptSecond, Line.yAxis, ptCenter);
 		Line rootLine = Axiom4LineOntoSelfThroughPoint.fold(orthogonalRootLine, ptSecond);
-		PointOnYAxis ptYIntercept = PointOnYAxis.fromIntercept(rootLine);
+		PointOnYAxis ptYIntercept = PseudoAxiom4PointOnYAxis.fromIntercept(rootLine);
 		PointOnXAxis geometricMean = Construction.PointOnXAxisfromPointOnYAxis(ptYIntercept);
 		return geometricMean;
 	}

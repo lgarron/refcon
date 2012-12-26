@@ -34,7 +34,7 @@ public class Minus extends Expression {
     Line antiDiag = Axiom3LineToLine.fold(Line.yAxis, Line.xAxis);
     Line lineNegative = Axiom4LineOntoSelfThroughPoint.fold(antiDiag, ptYIntercept);
     
-    PointOnXAxis ptNegative = PointOnXAxis.fromIntercept(lineNegative);
+    PointOnXAxis ptNegative = PseudoAxiom3PointOnXAxis.fromIntercept(lineNegative);
     
     return ptNegative;
   }

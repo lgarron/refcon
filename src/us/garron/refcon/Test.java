@@ -1,5 +1,6 @@
 package us.garron.refcon;
 
+import us.garron.refcon.construction.PointOnXAxis;
 import us.garron.refcon.math.*;
 import us.garron.refcon.math.convenience.*;
 
@@ -64,6 +65,8 @@ public class Test {
 		v2.construct();
 		v3.construct();
 		System.out.println(v3.construct().name());
+		PointOnXAxis construction = v3.construct();
+		//construction.
 		
 	}
 

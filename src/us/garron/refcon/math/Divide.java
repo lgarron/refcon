@@ -1,6 +1,7 @@
 package us.garron.refcon.math;
 
 import us.garron.refcon.axiom.Axiom1ThroughTwoPoints;
+import us.garron.refcon.axiom.PseudoAxiom4PointOnYAxis;
 import us.garron.refcon.construction.Construction;
 import us.garron.refcon.construction.Line;
 import us.garron.refcon.construction.PointOnXAxis;
@@ -43,7 +44,7 @@ public class Divide extends Expression {
 		// as first is to...
 		Line scalingLine2 = Construction.parallelLineToLineThroughPoint(scalingLine1, ptFirst);
 		// the quotient! (second/1 = first/?)
-		PointOnYAxis ptQuotientOnYAxis = PointOnYAxis.fromIntercept(scalingLine2);
+		PointOnYAxis ptQuotientOnYAxis = PseudoAxiom4PointOnYAxis.fromIntercept(scalingLine2);
 		
 		PointOnXAxis ptQuotient = Construction.PointOnXAxisfromPointOnYAxis(ptQuotientOnYAxis);
 		return ptQuotient;

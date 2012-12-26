@@ -19,13 +19,6 @@ public class Line extends Locus {
 	public static final Line x1Line = Line.makeHorizontalLine(new RCInteger(1));
 	public static final Line yAxis = Line.makeVerticalLine(new RCInteger(0));
 	public static final Line y1Line = Line.makeVerticalLine(new RCInteger(1));
-
-	public Line(final Point p1, final Point p2) {
-		this.p1 = p1;
-		this.p2 = p2;
-		this.axiom = null;
-		this.name = "Line " + super.nextName();
-	}
 	
 	public Line(final Point p1, final Point p2, Axiom axiom) {
 		this.p1 = p1;
@@ -56,15 +49,17 @@ public class Line extends Locus {
 	
 	private static Line makeVerticalLine(final Expression x) {
 		return new Line(
-				new Point(x, new RCInteger(0)),
-				new Point(x, new RCInteger(1))
+				new Point(x, new RCInteger(0), new PseudoAxiom1Preconstructed()),
+				new Point(x, new RCInteger(1), new PseudoAxiom1Preconstructed()),
+				new PseudoAxiom1Preconstructed()
 		);
 	}
 	
 	private static Line makeHorizontalLine(final Expression y) {
 		return new Line(
-				new Point(new RCInteger(0), y),
-				new Point(new RCInteger(1), y)
+				new Point(new RCInteger(0), y, new PseudoAxiom1Preconstructed()),
+				new Point(new RCInteger(1), y, new PseudoAxiom1Preconstructed()),
+				new PseudoAxiom1Preconstructed()
 		);
 	}
 

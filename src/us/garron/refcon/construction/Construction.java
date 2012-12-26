@@ -5,11 +5,11 @@ import us.garron.refcon.axiom.*;
 public class Construction {
 
   public static PointOnXAxis origin() {
-    return PointOnXAxis.fromIntercept(Line.yAxis);
+    return PseudoAxiom3PointOnXAxis.fromIntercept(Line.yAxis);
   }
 
   public static PointOnXAxis point_1_0() {
-    return PointOnXAxis.fromIntercept(Line.x1Line);
+    return PseudoAxiom3PointOnXAxis.fromIntercept(Line.x1Line);
   }
   
   public static PointOnXAxis plus(PointOnXAxis p1, PointOnXAxis p2) {
@@ -22,7 +22,7 @@ public class Construction {
   public static PointOnYAxis PointOnYAxisfromPointOnXAxis(PointOnXAxis pointOnXAxis) {
     Line diag = Axiom3LineToLine.fold(Line.xAxis, Line.yAxis);
     Line lineOriginal = Axiom4LineOntoSelfThroughPoint.fold(diag, pointOnXAxis);
-    PointOnYAxis ptYIntercept = PointOnYAxis.fromIntercept(lineOriginal);
+    PointOnYAxis ptYIntercept = PseudoAxiom4PointOnYAxis.fromIntercept(lineOriginal);
     return ptYIntercept;
   }
   
@@ -30,23 +30,23 @@ public class Construction {
   public static PointOnXAxis PointOnXAxisfromPointOnYAxis(PointOnYAxis pointOnYAxis) {
     Line diag = Axiom3LineToLine.fold(Line.xAxis, Line.yAxis);
     Line lineOriginal = Axiom4LineOntoSelfThroughPoint.fold(diag, pointOnYAxis);
-    PointOnXAxis ptXIntercept = PointOnXAxis.fromIntercept(lineOriginal);
+    PointOnXAxis ptXIntercept = PseudoAxiom3PointOnXAxis.fromIntercept(lineOriginal);
     return ptXIntercept;
   }
 
   public static PointOnXAxis meanOfPointsOnXAxis(PointOnXAxis m, PointOnXAxis n) {
     Line lineM = Axiom4LineOntoSelfThroughPoint.fold(Line.xAxis, m);
     Line lineMean = Axiom7LineOntoSelfAndPointToLine.fold(Line.xAxis, n, lineM);
-    PointOnXAxis ptMean= PointOnXAxis.fromIntercept(lineMean);
+    PointOnXAxis ptMean= PseudoAxiom3PointOnXAxis.fromIntercept(lineMean);
     return ptMean;
   }
 
   public static PointOnXAxis doublePointOnXAxis(PointOnXAxis m) {
     Line diag = Axiom3LineToLine.fold(Line.xAxis, Line.yAxis);
     Line lineM = Axiom4LineOntoSelfThroughPoint.fold(Line.xAxis, m);
-    Point ptM = PseudoAxiom1PointFromTwoLines.define(diag, lineM);
+    Point ptM = PseudoAxiom2PointFromTwoLines.define(diag, lineM);
     Line lineDouble = Axiom4LineOntoSelfThroughPoint.fold(diag, ptM);
-    PointOnXAxis ptDouble = PointOnXAxis.fromIntercept(lineDouble);
+    PointOnXAxis ptDouble = PseudoAxiom3PointOnXAxis.fromIntercept(lineDouble);
     return ptDouble;
   }
   

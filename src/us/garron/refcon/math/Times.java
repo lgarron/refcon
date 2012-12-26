@@ -1,6 +1,7 @@
 package us.garron.refcon.math;
 
 import us.garron.refcon.axiom.Axiom1ThroughTwoPoints;
+import us.garron.refcon.axiom.PseudoAxiom4PointOnYAxis;
 import us.garron.refcon.construction.*;
 
 public class Times extends Expression {
@@ -40,7 +41,7 @@ public class Times extends Expression {
 		// as second is to...
 		Line scalingLine2 = Construction.parallelLineToLineThroughPoint(scalingLine1, ptSecond);
 		// the product! (1/first = second/?)
-		PointOnYAxis ptProductOnYAxis = PointOnYAxis.fromIntercept(scalingLine2);
+		PointOnYAxis ptProductOnYAxis = PseudoAxiom4PointOnYAxis.fromIntercept(scalingLine2);
 		
 		PointOnXAxis ptProduct = Construction.PointOnXAxisfromPointOnYAxis(ptProductOnYAxis);
 		return ptProduct;

@@ -1,5 +1,6 @@
 package us.garron.refcon.math;
 
+import us.garron.refcon.axiom.PseudoAxiom1Preconstructed;
 import us.garron.refcon.construction.PointOnXAxis;
 
 public class PositiveGiven extends Expression {
@@ -31,8 +32,7 @@ public class PositiveGiven extends Expression {
 	}
 
 	public PointOnXAxis constructUndeduplicated() {
-		//TODO Elegant solution
-		return new PointOnXAxis(this);
+		return new PointOnXAxis(this, new RCInteger(0), new PseudoAxiom1Preconstructed());
 	}
 	
 }
