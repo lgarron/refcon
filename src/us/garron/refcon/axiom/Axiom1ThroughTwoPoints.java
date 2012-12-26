@@ -2,7 +2,7 @@ package us.garron.refcon.axiom;
 
 import us.garron.refcon.construction.*;
 
-public class Axiom1ThroughTwoPoints implements Axiom {
+public class Axiom1ThroughTwoPoints extends Axiom {
 
 	private final Point p1;
 	private final Point p2;
@@ -23,6 +23,10 @@ public class Axiom1ThroughTwoPoints implements Axiom {
 				(Locus) p1,
 				(Locus) p2
 		};
+	}
+
+	public String description(Locus locus) {
+		return "Fold " + locus.name() + " through " + p1.name() + " and " + p2.name() + ".";
 	}
 	
 }

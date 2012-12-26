@@ -2,7 +2,7 @@ package us.garron.refcon.axiom;
 
 import us.garron.refcon.construction.*;
 
-public class Axiom3LineToLine implements Axiom {
+public class Axiom3LineToLine extends Axiom {
 
 	private final Line l1;
 	private final Line l2;
@@ -23,6 +23,10 @@ public class Axiom3LineToLine implements Axiom {
 				(Locus) l1,
 				(Locus) l2
 		};
+	}
+
+	public String description(Locus locus) {
+		return "Create " + locus.name() + " by folding " + l1.name() + " onto " + l2.name() + " (with the fold between " + l1.name() + " and " + l2.name() + ", going counterclockwise).";
 	}
 	
 }

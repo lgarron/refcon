@@ -19,4 +19,8 @@ public abstract class Locus {
 		return Integer.toString(latestIDNumber);
 	}
 	
+	public void generateConstruction(StepByStep stepByStep) {
+		axiom().generateConstruction(stepByStep);
+		stepByStep.addToConstructionList(this);
+	}
 }

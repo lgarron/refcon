@@ -29,7 +29,7 @@ public class Minus extends Expression {
   public PointOnXAxis constructUndeduplicated() {
     
     PointOnXAxis ptOriginal = original.construct();
-    Point ptYIntercept = Construction.PointOnYAxisfromPointOnXAxis(ptOriginal);
+    PointOnYAxis ptYIntercept = Construction.PointOnYAxisfromPointOnXAxis(ptOriginal);
 
     Line antiDiag = Axiom3LineToLine.fold(Line.yAxis, Line.xAxis);
     Line lineNegative = Axiom4LineOntoSelfThroughPoint.fold(antiDiag, ptYIntercept);

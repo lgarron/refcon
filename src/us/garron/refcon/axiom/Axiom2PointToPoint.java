@@ -2,7 +2,7 @@ package us.garron.refcon.axiom;
 
 import us.garron.refcon.construction.*;
 
-public class Axiom2PointToPoint implements Axiom {
+public class Axiom2PointToPoint extends Axiom {
 
 	private final Point p1;
 	private final Point p2;
@@ -23,6 +23,10 @@ public class Axiom2PointToPoint implements Axiom {
 				(Locus) p1,
 				(Locus) p2
 		};
+	}
+
+	public String description(Locus locus) {
+		return "Create " + locus.name() + " by folding " + p1.name() + " onto " + p2.name() + ".";
 	}
 	
 }

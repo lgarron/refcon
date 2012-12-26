@@ -2,7 +2,7 @@ package us.garron.refcon.axiom;
 
 import us.garron.refcon.construction.*;
 
-public class Axiom6PointToLineAndPointToLine implements Axiom {
+public class Axiom6PointToLineAndPointToLine extends Axiom {
 
 	private final Point p1;
 	private final Line l1;
@@ -29,6 +29,10 @@ public class Axiom6PointToLineAndPointToLine implements Axiom {
 				(Locus) p2,
 				(Locus) l2
 		};
+	}
+
+	public String description(Locus locus) {
+		return "Create " + locus.name() + " by simultaneously folding folding " + p1.name() + " onto " + l2.name() + " and " + p2.name() + " onto " + l2.name() + ".";
 	}
 	
 }

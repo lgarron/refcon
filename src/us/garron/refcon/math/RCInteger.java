@@ -32,6 +32,10 @@ public class RCInteger extends Expression {
 		if (value == 0) {
 			return Construction.origin();
 		}
+		else if (value == 1) {
+			//TODO: This may be redundant some day, but for now it avoids a bunch of semi-nontrivially-deduplicatable constructions (e.g. X axis onto self through origin, which is just Y axis).
+			return Construction.point_1_0();
+		}
 		else if (value > 0) {
 			int shifted = value >> 1;
 			int leastSignificantBit = value % 2;

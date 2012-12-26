@@ -2,7 +2,7 @@ package us.garron.refcon.axiom;
 
 import us.garron.refcon.construction.*;
 
-public class PseudoAxiom3PointOnXAxis implements Axiom {
+public class PseudoAxiom3PointOnXAxis extends Axiom {
 
 	private final Line l1;
 	private final Line l2;
@@ -25,4 +25,7 @@ public class PseudoAxiom3PointOnXAxis implements Axiom {
 		};
 	}
 
+	public String description(Locus locus) {
+		return "Label " + locus.name() + " at the intersection of " + l1.name() + " and " + l2.name() + ".";
+	}
 }

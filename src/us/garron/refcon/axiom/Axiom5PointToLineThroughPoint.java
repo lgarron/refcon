@@ -2,7 +2,7 @@ package us.garron.refcon.axiom;
 
 import us.garron.refcon.construction.*;
 
-public class Axiom5PointToLineThroughPoint implements Axiom {
+public class Axiom5PointToLineThroughPoint extends Axiom {
 
 	private final Point p1;
 	private final Line l1;
@@ -26,6 +26,10 @@ public class Axiom5PointToLineThroughPoint implements Axiom {
 				(Locus) l1,
 				(Locus) p2
 		};
+	}
+
+	public String description(Locus locus) {
+		return "Create " + locus.name() + " by folding " + p1.name() + " onto " + l1.name() + ", so that the fold goes through " + p2.name() + ".";
 	}
 	
 }

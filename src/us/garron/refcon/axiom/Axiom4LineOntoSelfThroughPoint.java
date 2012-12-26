@@ -2,7 +2,7 @@ package us.garron.refcon.axiom;
 
 import us.garron.refcon.construction.*;
 
-public class Axiom4LineOntoSelfThroughPoint implements Axiom {
+public class Axiom4LineOntoSelfThroughPoint extends Axiom {
 
 	private final Line l;
 	private final Point p;
@@ -23,6 +23,10 @@ public class Axiom4LineOntoSelfThroughPoint implements Axiom {
 				(Locus) l,
 				(Locus) p
 		};
+	}
+
+	public String description(Locus locus) {
+		return "Create " + locus.name() + " by folding " + l.name() + " onto itself, so that the fold goes through " + p.name() + ".";
 	}
 	
 }

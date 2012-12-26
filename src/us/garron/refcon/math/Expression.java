@@ -20,7 +20,7 @@ public abstract class Expression {
 
 	// TODO: Implement using Hashmap by implementing hashcodes for all Expression objects.
 	private static final List<Expression> constructedExpressions = new ArrayList<Expression>();
-	private static final List<PointOnXAxis> constructedExpressionsConstructions = new ArrayList<PointOnXAxis>();
+	public static final List<PointOnXAxis> constructedExpressionsConstructions = new ArrayList<PointOnXAxis>();
 	
 	public static PointOnXAxis constructDeduplicated(Expression e) {
 		

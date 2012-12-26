@@ -2,7 +2,7 @@ package us.garron.refcon.axiom;
 
 import us.garron.refcon.construction.*;
 
-public class PseudoAxiom2PointFromTwoLines implements Axiom {
+public class PseudoAxiom2PointFromTwoLines extends Axiom {
 
 	private final Line l1;
 	private final Line l2;
@@ -23,6 +23,10 @@ public class PseudoAxiom2PointFromTwoLines implements Axiom {
 				(Locus) l1,
 				(Locus) l2
 		};
+	}
+
+	public String description(Locus locus) {
+		return "Label " + locus.name() + " at the intersection of " + l1.name() + " and " + l2.name() + ".";
 	}
 
 }

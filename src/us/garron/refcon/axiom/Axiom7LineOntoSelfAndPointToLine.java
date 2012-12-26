@@ -2,7 +2,7 @@ package us.garron.refcon.axiom;
 
 import us.garron.refcon.construction.*;
 
-public class Axiom7LineOntoSelfAndPointToLine implements Axiom {
+public class Axiom7LineOntoSelfAndPointToLine extends Axiom {
 
 	private final Line l1;
 	private final Point p2;
@@ -26,6 +26,10 @@ public class Axiom7LineOntoSelfAndPointToLine implements Axiom {
 				(Locus) p2,
 				(Locus) l2
 		};
+	}
+
+	public String description(Locus locus) {
+		return "Create " + locus.name() + " by folding " + l1.name() + " onto itself, so that " + p2.name() + " lands on " + l2.name() + ".";
 	}
 	
 }
